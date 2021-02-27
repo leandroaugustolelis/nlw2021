@@ -7,6 +7,7 @@ class AnswerController {
   async execute(request: Request, response: Response) {
     const { value } = request.params;
     const { u } = request.query;
+
     const surveysUsersRepository = getCustomRepository(SurveysUsersRepository);
 
     const surveyUser = await surveysUsersRepository.findOne({

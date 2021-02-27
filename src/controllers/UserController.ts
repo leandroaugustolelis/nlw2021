@@ -9,8 +9,11 @@ class UserController {
     const { name, email } = request.body;
 
     const schema = yup.object().shape({
-      name: yup.string().required(),
-      email: yup.string().email().required(),
+      name: yup.string().required("Name required"),
+      email: yup
+        .string()
+        .email("Incorrect email format")
+        .required("Email required"),
     });
 
     try {
