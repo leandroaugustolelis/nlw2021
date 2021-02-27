@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { getCustomRepository, Not, IsNull } from "typeorm";
 import { SurveysUsersRepository } from "../repositories/SurveysUsersRepository";
-import * as yup from "yup";
-import { AppError } from "../errors/AppError";
 
 class NpsController {
   async execute(request: Request, response: Response) {
